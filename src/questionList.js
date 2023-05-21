@@ -336,19 +336,6 @@ const questions = [
         { answerText: 'Shades of Blue', isCorrect: true },
       ],
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
       questionText: 'What happened in 1066?',
       questionLevel: 'Difficult',

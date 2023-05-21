@@ -48,8 +48,6 @@ export default function App() {
     })
   }
 
-  
-
   function refresh(){
     fetchGame()
     .then( results => {

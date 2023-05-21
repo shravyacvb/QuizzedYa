@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import Countdown from "./Countdown";
 import {questions} from "./questionList";
 import { fetchAddGame } from "./services";
 
@@ -11,23 +10,26 @@ function Question(props){
     filterQuestions();
 
     const handleAnswerOptionClick = (isCorrect) => {
-        if (isCorrect) { 
+
+        if (isCorrect){ 
             setScore(score + 1); 
         }
+
         const nextQuestion = currentQuestion + 1; 
-		if (currentQuestion < filteredQuestions.length) {
+
+		if (currentQuestion < filteredQuestions.length){
 		    updateScoreList(score);
 		}
 
-        if (nextQuestion < filteredQuestions.length) { 
+        if (nextQuestion < filteredQuestions.length){ 
             setCurrentQuestion(nextQuestion); 
-        } else { 
+        } else{ 
             props.setShowScore(true);
         } 
     };
 
     function updateScoreList(score){
-        let scoreDetails = {};
+        const scoreDetails = {};
 		scoreDetails.score = score;
 		scoreDetails.difficultyLevel = props.difficultyLevel;
         scoreDetails.categoryType = props.categoryType;
@@ -74,7 +76,6 @@ function Question(props){
                             </div>))}
                     </div> ) : 
                 (   <div className="question">
-                        {/* <Countdown minutes={1} setPage={props.setPage}/> */}
                         {!props.paused && <div>
                         <div className='question-section'> 
                             <div className='question-count'> 
