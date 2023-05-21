@@ -3,7 +3,6 @@ import { fetchLogin } from "./services";
 function Login(props){
 
     function fetchLoginMethod(){
-        // setPage('Home');
         if(props.username){
           fetchLogin(props.username)
           .then( results => {
